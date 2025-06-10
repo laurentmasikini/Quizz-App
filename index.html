@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz L'Attaque des Titans</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Page d'accueil -->
+    <div id="home-screen">
+        <div class="home-container">
+            <h1>L'ATTAQUE DES TITANS</h1>
+            <p>Quiz pour les vrais passionnés</p>
+            
+            <div class="difficulty-selection">
+                <button id="easy-btn" class="difficulty-btn">RECRUE</button>
+                <button id="medium-btn" class="difficulty-btn">BATAILLON D'EXPLORATION</button>
+                <button id="hard-btn" class="difficulty-btn">TITAN SHIFTER</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Écran de quiz -->
+    <div id="quiz-screen" class="hide">
+        <div class="quiz-container">
+            <div class="question-header">
+                <div class="question-counter">Question <span id="current-question">1</span>/<span id="total-questions">20</span></div>
+            </div>
+            
+            <div class="question-content">
+                <h2 id="question">CECI EST UNE QUESTION</h2>
+                
+                <div class="options-grid">
+                    <div class="option" data-index="0">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Ceci est la réponse A</span>
+                    </div>
+                    <div class="option" data-index="1">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Ceci est la réponse B</span>
+                    </div>
+                    <div class="option" data-index="2">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Ceci est la réponse C</span>
+                    </div>
+                    <div class="option" data-index="3">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">Ceci est la réponse D</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Écran de résultats (caché au début) -->
+        <div id="score-container" class="hide">
+            <div class="score-content">
+                <h2>RÉSULTATS</h2>
+                <div id="score-message"></div>
+                <p>Votre score: <span id="score">0</span>/<span id="total-score">0</span></p>
+                <div class="score-buttons">
+                    <button id="restart-btn">RECOMMENCER</button>
+                    <button id="home-btn">ACCUEIL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    background-image: url('https://wallpapercave.com/wp/wp2473413.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* PAGE D'ACCUEIL */
+#home-screen {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    z-index: 1;
+}
+
+.home-container {
+    padding: 40px 20px;
+}
+
+#home-screen h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+#home-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #cccccc;
+}
+
+.difficulty-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.difficulty-btn {
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.difficulty-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+#easy-btn {
+    background-color: #8B0000;
+    color: white;
+}
+
+#medium-btn {
+    background-color: #8B0000;
+    color: white;
+}
+
+#hard-btn {
+    background-color: #8B0000;
+    color: white;
+}
+
+/* ÉCRAN DE QUIZ */
+#quiz-screen {
+    width: 100%;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.quiz-container {
+    background-color: #8B0000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.question-header {
+    background-color: #590000;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question-counter {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.question-content {
+    padding: 30px;
+}
+
+#question {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.option {
+    background-color: #333333;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option:hover {
+    background-color: #444444;
+}
+
+.option-letter {
+    background-color: #8B0000;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.option-text {
+    font-size: 1.1rem;
+}
+
+.option.correct {
+    background-color: #4CAF50;
+}
+
+.option.incorrect {
+    background-color: #590000;
+}
+
+/* ÉCRAN DE RÉSULTATS */
+#score-container {
+    background-color: #8B0000;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.score-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#score-message {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.score-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.score-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#restart-btn, #home-btn {
+    padding: 12px 25px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#restart-btn:hover, #home-btn:hover {
+    background-color: #444444;
+}
+
+.hide {
+    display: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+    #question {
+        font-size: 1.5rem;
+    }
+    
+    .option {
+        padding: 12px;
+    }
+    
+    .option-letter {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .option-text {
+        font-size: 1rem;
+    }
+}
