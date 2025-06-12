@@ -11,7 +11,7 @@ const quizData = {
             options: ["7", "8", "9", "10"],
             correct: 1
         },
-        {
+        {         
             question: "Quelle est la couleur du ciel par temps clair?",
             options: ["Rouge", "Vert", "Bleu", "Jaune"],
             correct: 2
@@ -211,4 +211,31 @@ function goToHome() {
     quizScreen.classList.add('hide');
     homeScreen.classList.remove('hide');
     document.querySelector('.quiz-container').classList.remove('hide');
+}
+
+let timer;
+let timeLeft = 15;
+
+function updateTimer() {
+    timerElement.textContent = `Temps restant : ${timeLeft}s`;
+    if (timeLeft <= 5) {
+        timerElement.style.color = "red";
+    } else {
+        timerElement.style.color = "white";
+    }
+}
+
+function startTimer(callbackOnEnd) {
+    clearInterval(timer); // Réinitialise tout timer précédent
+    timeLeft = 15;
+    updateTimer();
+
+    timer = setInterval(() => {
+        timeLeft--;
+        updateTimer();
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            callbackOnEnd(); // Appelle la fonction quand le temps est écoulé
+        }
+    }, 1000);
 }
